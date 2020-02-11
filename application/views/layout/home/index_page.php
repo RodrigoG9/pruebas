@@ -108,24 +108,35 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-8">
 					<div
-						id="carouselExampleControls"
+						id="carousel"
 						class="carousel slide"
 						data-ride="carousel"
 					>
+					<ol class="carousel-indicators">
+						<li data-target="#carousel" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel" data-slide-to="1"></li>
+						<li data-target="#carousel" data-slide-to="2"></li>
+					</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img class="d-block w-100" src="test.jpg" alt="First slide" />
+								<img class="d-block w-100" height="300px"  src="<?= base_url(
+        	'application/assets/images/general.jpg'
+        ) ?>" alt="First slide" />
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="test.jpg" alt="Second slide" />
+								<img class="d-block w-100" height="300px"  src="<?= base_url(
+        	'application/assets/images/sala-armas.jpg'
+        ) ?>" alt="Second slide" />
 							</div>
 							<div class="carousel-item">
-								<img class="d-block w-100" src="test.jpg" alt="Third slide" />
+								<img class="d-block w-100" height="300px"  src="<?= base_url(
+        	'application/assets/images/soldado.jpg'
+        ) ?>" alt="Third slide" />
 							</div>
 						</div>
 						<a
 							class="carousel-control-prev"
-							href="#carouselExampleControls"
+							href="#carousel"
 							role="button"
 							data-slide="prev"
 						>
@@ -134,7 +145,7 @@
 						</a>
 						<a
 							class="carousel-control-next"
-							href="#carouselExampleControls"
+							href="#carousel"
 							role="button"
 							data-slide="next"
 						>

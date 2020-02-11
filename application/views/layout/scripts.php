@@ -18,3 +18,14 @@
 			src="https://kit.fontawesome.com/329de3fb89.js"
 			crossorigin="anonymous"
 		></script>
+		
+		<!-- datetiempicker -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
+
+
+		<!-- js -->
+		<script src="<?= base_url(
+  	'application/assets/templates/js/script.js'
+  ) ?>"></script>
