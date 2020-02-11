@@ -12,10 +12,15 @@ class Formulario extends CI_Controller
     {
         $vars = array(
 			'scripts' => $this->load->view('layout/scripts', '', true),
-			'styles' => $this->load->view('layout/styles', '', true),
-            
-		);
+			'styles' => $this->load->view('layout/styles', '', true),);
         $this->load->view('layout/home/formulario_page',$vars);
+    }
+
+    public function insertar()
+    {
+        if ($_POST) {
+            
+        }
     }
 
 }

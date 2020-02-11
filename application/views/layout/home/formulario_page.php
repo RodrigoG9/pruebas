@@ -46,9 +46,12 @@
 			</div>
 		</nav>
 	
-
-
-<form>
+<br>
+<center>
+<h1> CREACION DE SALAS <h1>
+</center>
+<br>
+<form >
 <div class="form-group has-success">
   <label class="form-control-label" for="inputSuccess1">NOMBRE DE LA SALA</label>
   <input type="text"  class="form-control" id="inputValid" placeholder="INGRESE EL NOMBRE DE LA SALA ....">
@@ -67,11 +70,15 @@
 	</div>
 	<div class="form-group">
       <label for="exampleInputFile">IMAGEN 2</label>
-      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <input type="file" class="form-control-file" id="exampleInputFile2" aria-describedby="fileHelp">
       <small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
     </div>
-    
-	
+    </fieldset>
+    <button type="submit" class="btn btn-success">INSERTAR</button>
+  </fieldset>
+  </fieldset>
+  <button type="reset" class="btn btn-danger">LIMPIAR</button>
+  </fieldset>
 </form>
 </body>
 </html>
