@@ -129,8 +129,22 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4">
-                <p>asas</p>
+                <div class="col-md-4 border-left">
+                    <h4>Haz tu reserva aqui!</h3>
+                    <form>
+                        <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                                <label>
+                                    Ingrese sus nombres:
+                                    <input type="text" name="" id="" class="form-control">
+                                </label>
+                            </div>
+                            <div class="form-row"></div>
+                            <div class="form-row"></div>
+
+                        </div>
+                        
+                    </form>
                 </div>
                 
             </div>
