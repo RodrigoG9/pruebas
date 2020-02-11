@@ -111,7 +111,7 @@
                             	echo '<div class="col-lg-4 mb-3"> ';
                             	echo '<div class="card"">';
                             	echo '<img src="data:image/jpeg;base64,' .
-                            		base64_encode($sala->foto2) .
+                            		base64_encode($sala->foto_1) .
                             		'" class="card-img-top" alt="..." height="150px width="150px">';
                             	echo '<div class="card-body">';
                             	echo '<h5 class="card-title">' .

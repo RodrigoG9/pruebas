@@ -21,4 +21,17 @@ class Salas extends CI_Controller
 
 		$this->load->view('layout/home/salas_page', $vars);
 	}
+
+	public function mostrarSala($id)
+	{
+		$sala = $this->sala_model->getSala($id);
+
+		$vars = array(
+			'scripts' => $this->load->view('layout/scripts', '', true),
+			'styles' => $this->load->view('layout/styles', '', true),
+			'data' => $sala
+		);
+
+		$this->load->view('layout/home/sala_info', $vars);
+	}
 }
