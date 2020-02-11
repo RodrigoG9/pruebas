@@ -111,7 +111,7 @@
                             	echo '<div class="col-lg-4 mb-3"> ';
                             	echo '<div class="card"">';
                             	echo '<img src="data:image/jpeg;base64,' .
-                            		base64_encode($sala->foto_1) .
+                            		base64_encode($sala->foto2) .
                             		'" class="card-img-top" alt="..." height="150px width="150px">';
                             	echo '<div class="card-body">';
                             	echo '<h5 class="card-title">' .
@@ -130,20 +130,32 @@
                 </div>
                 
                 <div class="col-md-4 border-left">
-                    <h4>Haz tu reserva aqui!</h3>
                     <form>
-                        <form class="needs-validation" novalidate>
-                            <div class="form-row">
-                                <label>
-                                    Ingrese sus nombres:
-                                    <input type="text" name="" id="" class="form-control">
-                                </label>
-                            </div>
-                            <div class="form-row"></div>
-                            <div class="form-row"></div>
-
+                        <fieldset>
+                            <legend>Haz tu reserva aqui!</legend>
+                        </fieldset>
+                        <div class="form-group">
+                            <label class="form-control-label" for="fullNames">Ingrese sus nombres:</label>
+                            <input type="text" class="form-control" id="fullNames" placeholder= "Nombres completos">
                         </div>
-                        
+                                                
+                        <div class="form-group">
+                            <label class="form-control-label" for="fechaReserva">Seleccione la fecha:</label>
+                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"id="fechaReserva"/>
+                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-control-label" for="totalPersonas">Ingrese el numero de personas:</label>
+                            <input type="number" class="form-control" id="totalPersonas" placeholder= "maximo 30 personas">
+                        </div>
+        
+                        <button type="submit" class="btn btn-primary">Solicitar reserva</button>
                     </form>
                 </div>
                 
