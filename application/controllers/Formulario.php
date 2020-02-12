@@ -19,7 +19,7 @@ class Formulario extends CI_Controller
     public function insertar()
     {
         if ($this->input->post()) {
-            print_r($_POST);
+           echo $_POST['img1'];
         }
 
     }

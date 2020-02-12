@@ -4,6 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script>
+$(document).ready(function() {
+//Manda la imagen seleccionada 1 a send img1 
+// Escuchamos el evento 'change' del input donde cargamos el archivo
+$(document).on('change', 'input[id=img1]', function(e) {
+	//alert("funciona");
+  // Obtenemos la ruta temporal mediante el evento
+  var TmpPath = URL.createObjectURL(e.target.files[0]);
+  // Mostramos la ruta temporal
+ $('span').html(TmpPath);
+  $('#send_img').attr('src', TmpPath);
+});
+
+//Manda la imagen seleccionada 2 a send img 2
+$(document).on('change', 'input[id=img2]', function(e) {
+	
+  // Obtenemos la ruta temporal mediante el evento
+  var TmpPath = URL.createObjectURL(e.target.files[0]);
+  // Mostramos la ruta temporal
+ $('span').html(TmpPath);
+  $('#send_img2').attr('src', TmpPath);
+});
+
+});
+	</script>
 	<title>Cima de la liberatad Reservas/CReacion Salas</title>
 	<?= $styles ?>
 </head>
@@ -65,14 +91,20 @@
 
 	<div class="form-group">
       <label for="exampleInputFile">IMAGEN 1</label>
-      <input type="file" class="form-control-file" name="img1" aria-describedby="fileHelp">
+	  <input type="file" id="img1" class="form-control-file" name="img1" aria-describedby="fileHelp">
+	  <span></span><br /><br />
+	  <img width="200" alt="Imagen" id="send_img" name="send_img" />
       <small id="fileHelp" class="form-text text-muted">Ingrese la primera imagen</small>
 	</div>
+	
 	<div class="form-group">
       <label for="exampleInputFile">IMAGEN 2</label>
-      <input type="file" class="form-control-file" name="img2" aria-describedby="fileHelp">
-      <small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
-    </div>
+      <input type="file" class="form-control-file" id="img2" name="img2" aria-describedby="fileHelp">
+	  <span></span><br /><br />
+	  <img width="200" alt="Imagen" id="send_img2" name="send_img2" /> 
+	  <small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
+	</div>
+	
     </fieldset>
     <button type="submit" class="btn btn-success">INSERTAR</button>
   </fieldset>
