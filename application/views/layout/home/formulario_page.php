@@ -61,7 +61,7 @@
 
 <div class="form-group">
       <label for="exampleTextarea">DESCRIPCION</label>
-      <textarea class="form-control" name="area" rows="3" placeholder="INGRESE DESCRIPCION DE LA SALA ...."></textarea>
+      <textarea class="form-control" id="area" name="area" rows="3" placeholder="INGRESE DESCRIPCION DE LA SALA ...."></textarea>
     </div>
 
 	<div class="form-group">
@@ -82,6 +82,9 @@
 	  
 	</div>
 
+	<div id="ajx">
+		
+	</div>
     </fieldset>
     <button type="submit" id="insertar"  name="insertar" class="btn btn-success">INSERTAR</button>
   </fieldset>

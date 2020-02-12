@@ -18,10 +18,8 @@ class Formulario extends CI_Controller
 
     public function insertar()
     {
-        //if ($this->input->post()) {
-          // echo $_POST['titulo']; 
-        //}
-echo "HOLA";
+        $titulo = $this->input->post('titulo');
+        var_dump($titulo);
     }
 
 }
