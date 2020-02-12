@@ -51,34 +51,42 @@
 <h1> CREACION DE SALAS <h1>
 </center>
 <br>
-<form >
+<form method="post" action="formulario/insertar">
 <div class="form-group has-success">
   <label class="form-control-label" for="inputSuccess1">NOMBRE DE LA SALA</label>
-  <input type="text"  class="form-control" id="inputValid" placeholder="INGRESE EL NOMBRE DE LA SALA ....">
+  <input type="text"  class="form-control" name="titulo" placeholder="INGRESE EL NOMBRE DE LA SALA ....">
   
 </div>
 
 <div class="form-group">
       <label for="exampleTextarea">DESCRIPCION</label>
-      <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="INGRESE DESCRIPCION DE LA SALA ...."></textarea>
+      <textarea class="form-control" name="area" rows="3" placeholder="INGRESE DESCRIPCION DE LA SALA ...."></textarea>
     </div>
 
 	<div class="form-group">
       <label for="exampleInputFile">IMAGEN 1</label>
-      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+      <input type="file" class="form-control-file" name="img1" aria-describedby="fileHelp">
       <small id="fileHelp" class="form-text text-muted">Ingrese la primera imagen</small>
 	</div>
 	<div class="form-group">
       <label for="exampleInputFile">IMAGEN 2</label>
-      <input type="file" class="form-control-file" id="exampleInputFile2" aria-describedby="fileHelp">
+      <input type="file" class="form-control-file" name="img2" aria-describedby="fileHelp">
       <small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
     </div>
     </fieldset>
     <button type="submit" class="btn btn-success">INSERTAR</button>
   </fieldset>
+
   </fieldset>
   <button type="reset" class="btn btn-danger">LIMPIAR</button>
   </fieldset>
 </form>
+
+<script>
+<?php
+
+?>
+</script>
+
 </body>
 </html>

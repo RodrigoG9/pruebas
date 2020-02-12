@@ -18,9 +18,10 @@ class Formulario extends CI_Controller
 
     public function insertar()
     {
-        if ($_POST) {
-            
+        if ($this->input->post()) {
+            print_r($_POST);
         }
+
     }
 
 }
