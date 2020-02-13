@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = false;
 
 $route['salas/(:num)'] = 'salas/mostrarSala/$1';
+$route['salas/reservar']['POST'] = 'salas/reservar';

@@ -134,34 +134,52 @@
                         <fieldset>
                             <legend>Haz tu reserva aqui!</legend>
                         </fieldset>
+
                         <div class="form-group">
                             <label class="form-control-label" for="fullNames">Ingrese sus nombres:</label>
                             <input type="text" class="form-control" id="fullNames" placeholder= "Nombres completos">
                         </div>
-                                                
-                        <div class="form-group">
-                            <label class="form-control-label" for="fechaReserva">Seleccione la fecha:</label>
-                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"id="fechaReserva"/>
+						<div class="form-group has-danger">
+  							<label class="form-control-label" for="fechaReserva">Seleccione la fecha:</label>
+  							<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input " data-target="#datetimepicker1"id="fechaReserva"/>
                                 <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                    
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>                      
                                 </div>
                             </div>
-                        </div>
+  							<div class="invalid-feedback" id="fechaMsg"></div>
+						</div>
+                                                
 
                         <div class="form-group">
                             <label class="form-control-label" for="totalPersonas">Ingrese el numero de personas:</label>
                             <input type="number" class="form-control" id="totalPersonas" placeholder= "maximo 30 personas">
+							<div class="invalid-feedback" id="totalPersonasMsg"></div>
                         </div>
-        
-                        <button type="submit" class="btn btn-primary">Solicitar reserva</button>
+							
+                        <button type="submit" class="btn btn-primary" id="btn-reserva">Solicitar reserva</button>
                     </form>
                 </div>
                 
             </div>
 		</div>
-
+		<!-- modal reservas -->
+		<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="mr-titulo"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <p id="mr-contenido"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 		<!-- Footer -->
 
 		<!-- Scripts -->
