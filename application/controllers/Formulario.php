@@ -6,6 +6,7 @@ class Formulario extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('formularioo_model');
     }
 
     public function index()
@@ -19,7 +20,11 @@ class Formulario extends CI_Controller
     public function insertar()
     {
         $titulo = $this->input->post('titulo');
-        var_dump($titulo);
+        
+        $area = $this->input->post('area');
+        $this->formularioo_model->insertar_sala($titulo,$area);
+        //var_dump($area);
+        
     }
 
 }

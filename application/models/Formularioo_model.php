@@ -7,11 +7,14 @@ class Formularioo_model extends CI_Model
         $this->load->database();
     }
 
-    public function insertar_sala($titulo,$detalle,$img1,$img2)
+    public function insertar_sala($titulo,$area)
     {
+        $datos=array(
+            'titulo'=>$titulo,
+            'texto'=> $area
+        );
 
-        
-
+        $this->db->insert('test1', $datos);
     }
 
 }

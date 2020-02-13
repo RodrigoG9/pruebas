@@ -82,9 +82,7 @@
 	  
 	</div>
 
-	<div id="ajx">
-		
-	</div>
+	
     </fieldset>
     <button type="submit" id="insertar"  name="insertar" class="btn btn-success">INSERTAR</button>
   </fieldset>
@@ -93,7 +91,9 @@
   <button type="reset" class="btn btn-danger">LIMPIAR</button>
   </fieldset>
 </form>
-
+<div id="ajx">
+		
+	</div>
 <?=$scripts?>
 
 </body>
