@@ -26,17 +26,11 @@ $(document).ready(function() {
 		var textoi = $("#area").val();
 		var img1i = $("#img1");
 		var img2i = $("#img2");
-		var foto1 = img1i[0].files;
-		var foto2 = img2i[0].files;
 
-		var foto1i = foto1[0];
-		var foto2i = foto2[0];
-		var lector = new FileReader();
 		let formData = new FormData();
 		formData.append("titulo", tituloi);
 		formData.append("area", textoi);
-		formData.append("foto1", foto1i);
-		formData.append("foto2", foto2i);
+		
 
 		$.ajax({
 			url: "/formulario/insertar",

@@ -22,9 +22,9 @@ class Formulario extends CI_Controller
         $titulo = $this->input->post('titulo');
         
         $area = $this->input->post('area');
-        $this->formularioo_model->insertar_sala($titulo,$area);
+        //$this->formularioo_model->insertar_sala($titulo,$area);
         //var_dump($area);
         
     }
 
-}
+} 
