@@ -14,7 +14,7 @@
 <h1 class="text-center"> CREACION DE SALAS <h1>
 <div class="row">
 	<div class="col">
-	<form class="h5">
+	<form class="h5" >
 		<div class="form-group">
 			<label class="form-control-label" for="titulo">NOMBRE DE LA SALA</label>
 			<input type="text"  class="form-control" id="titulo" name="titulo" placeholder="INGRESE EL NOMBRE DE LA SALA ....">
@@ -28,9 +28,9 @@
 		  <div class="form-group">
 			<label for="exampleInputFile">IMAGEN 1</label>
 			<small id="fileHelp" class="form-text text-muted">Ingrese la primera imagen</small>
-			<input type="file" id="img1" class="form-control-file" name="img1" aria-describedby="fileHelp">
+			<input type="file" accept="image/*" id="img1" class="form-control-file" name="img1" aria-describedby="fileHelp">
 			<span id="span1" d-block text-muted></span>
-			<img width="200" alt="Imagen" id="send_img" name="send_img" />
+			<center> <img width="200" alt="Imagen" id="send_img" name="send_img" /> </center>
 		   
 		  </div>
 		  
@@ -39,13 +39,13 @@
 			<small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
 			<input type="file" class="form-control-file" id="img2" name="img2" aria-describedby="fileHelp">
 			<span id="span2" class="d-block text-muted"></span>
-			<img width="200" alt="Imagen" id="send_img2" name="send_img2"/> 
+			<center> <img width="200" alt="Imagen" id="send_img2" name="send_img2"/> </center>
 			
 		  </div>
 	  
 		  
 		
-		  <button type="submit" id="insertar"  name="insertar" class="btn btn-success">INSERTAR</button>
+		  <button type="submit" id="btn_insertar"  name="btn_insertar" class="btn btn-success">INSERTAR</button>
 		
 	  
 		

@@ -29,20 +29,31 @@ $(document).ready(function() {
 		// Obtenemos la ruta temporal mediante el evento
 		var TmpPath = URL.createObjectURL(e.target.files[0]);
 		// Mostramos la ruta temporal
-		$("#span2").html(TmpPath);
+	//	$("#span2").html(TmpPath);
 		$("#send_img2").attr("src", TmpPath);
 	});
+	$(document).on("change", "input[id=img1]", function(e) {
+		// Obtenemos la ruta temporal mediante el evento
+		var TmpPath = URL.createObjectURL(e.target.files[0]);
+		// Mostramos la ruta temporal
+	//	$("#span2").html(TmpPath);
+		$("#send_img").attr("src", TmpPath);
+	});
 
-	$("#insertar").click(function(e) {
+
+	$("#btn_insertar").click(function(e) {
 		e.preventDefault();
 		var tituloi = $("#titulo").val();
 		var textoi = $("#area").val();
-		var img1i = $("#img1");
-		var img2i = $("#img2");
+		var img1i = $("#img1")[0].files;
+		//var img2i = $("#img2");
+		var lector = new FileReader();
 
 		let formData = new FormData();
-		formData.append("titulo", tituloi);
-		formData.append("area", textoi);
+		formData.append("tituloi", tituloi);
+		formData.append("areai", textoi);
+		formData.append("foto1i",img1i[0]);
+		
 
 		$.ajax({
 			url: "/formulario/insertar",
