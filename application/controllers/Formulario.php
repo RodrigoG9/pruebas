@@ -26,9 +26,11 @@ class Formulario extends CI_Controller
 	{
 		$titulo = $this->input->post('tituloi');
 		$area = $this->input->post('areai');
-		//$foto1=$this->input->post('foto1i');
+		//get_image = $this->input->post(file_get_contents($_FILES['foto1i']['tmp_name']));
+		//$foto1=$this->input->post(file_get_contents($_FILES['foto1i']['tmp_name']));
 		//$this->formularioo_model->insertar_sala($titulo,$area);
-		var_dump($area);
+		//var_dump($get_image);
+		
 		$config['upload_path'] = './sala/';
         $config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size'] = 2048000;
@@ -38,15 +40,25 @@ class Formulario extends CI_Controller
             $error = array('error' => $this->upload->display_errors());
             echo json_encode($error);
         } else {
-            echo json_encode(true);
+			$file_data1 = $this->upload->data();
+			//var_dump($file_data1['file_size']);
+			$bytes1=file_get_contents($file_data1['full_path']);
+            //var_dump($bytes1);
 		}
+
 
 		if (!$this->upload->do_upload('foto2i')) { #Aquí me refiero a "foto", el nombre que pusimos en FormData
             $error = array('error' => $this->upload->display_errors());
             echo json_encode($error);
         } else {
-            echo json_encode(true);
+			//echo json_encode(true);
+			$file_data2 = $this->upload->data();
+			$bytes2=file_get_contents($file_data2['full_path']);
+			//var_dump($file_data2['file_name']);
 		}
+
+
+		
 		
 
 		
