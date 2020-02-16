@@ -16,6 +16,7 @@ class Salas extends CI_Controller
 		$vars = array(
 			'scripts' => $this->load->view('layout/scripts', '', true),
 			'styles' => $this->load->view('layout/styles', '', true),
+			'nav' => $this->load->view('layout/nav', '', true),
 			'data' => $salas
 		);
 
@@ -29,6 +30,7 @@ class Salas extends CI_Controller
 		$vars = array(
 			'scripts' => $this->load->view('layout/scripts', '', true),
 			'styles' => $this->load->view('layout/styles', '', true),
+			'nav' => $this->load->view('layout/nav', '', true),
 			'data' => $sala
 		);
 

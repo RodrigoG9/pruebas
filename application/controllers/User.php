@@ -17,7 +17,7 @@ class User extends CI_Controller
 		$estado = $this->user_model->verificarUser($nick, $pass);
 
 		$this->session->set_userdata(array(
-			'nick' => 'Wills',
+			'nick' => $nick,
 			'isLogged' => true
 		));
 
