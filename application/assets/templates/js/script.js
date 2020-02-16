@@ -46,13 +46,14 @@ $(document).ready(function() {
 		var tituloi = $("#titulo").val();
 		var textoi = $("#area").val();
 		var img1i = $("#img1")[0].files;
-		//var img2i = $("#img2");
+		var img2i = $("#img2")[0].files;
 		var lector = new FileReader();
 
 		let formData = new FormData();
 		formData.append("tituloi", tituloi);
 		formData.append("areai", textoi);
 		formData.append("foto1i",img1i[0]);
+		formData.append("foto2i",img2i[0]);
 		
 
 		$.ajax({

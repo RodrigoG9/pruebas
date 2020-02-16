@@ -31,15 +31,24 @@ class Formulario extends CI_Controller
 		var_dump($area);
 		$config['upload_path'] = './sala/';
         $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 2048000;
-
+		$config['max_size'] = 2048000;
+		
         $this->load->library('upload', $config);
         if (!$this->upload->do_upload('foto1i')) { #Aquí me refiero a "foto", el nombre que pusimos en FormData
             $error = array('error' => $this->upload->display_errors());
             echo json_encode($error);
         } else {
             echo json_encode(true);
-        }
+		}
+
+		if (!$this->upload->do_upload('foto2i')) { #Aquí me refiero a "foto", el nombre que pusimos en FormData
+            $error = array('error' => $this->upload->display_errors());
+            echo json_encode($error);
+        } else {
+            echo json_encode(true);
+		}
+		
+
 		
 	}
 }
