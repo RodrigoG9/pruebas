@@ -25,6 +25,8 @@
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script>
 
+		<!-- highcharts -->
+		<script src="https://code.highcharts.com/highcharts.src.js"></script>
 
 		<!-- js -->
 		<script src="<?= base_url(

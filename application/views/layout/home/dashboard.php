@@ -11,7 +11,16 @@
 <body class="bg-white">
 
 <?= $nav ?>
-<div class="container p-2 shadow p-3 mb-5 bg-white rounded"></div>			
+<div class="container p-2 shadow p-3 mb-5 bg-white rounded">
+	<h2 class="text-center">Estadistica de visitas</h2>
+	<div class="row">
+		<div class="col">
+			<div id="grafico-visitas">
+
+			</div>
+		</div>
+	</div>
+</div>			
 
 	
 <?= $scripts ?>

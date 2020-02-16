@@ -1,5 +1,7 @@
 let btnReserva = document.getElementById("btn-reserva");
 let loginModal = document.getElementById("loginModal");
+let chart = document.getElementById("grafico-visitas");
+
 $(document).ready(function() {
 	if (btnReserva !== null) {
 		btnReserva.addEventListener("click", e => {
@@ -10,6 +12,10 @@ $(document).ready(function() {
 
 	if (loginModal !== null) {
 		login();
+	}
+
+	if (chart) {
+		graficarVisitas();
 	}
 
 	$(function() {
@@ -53,6 +59,10 @@ $(document).ready(function() {
 	});
 });
 
+const graficarVisitas = () => {
+	Highcharts.chart("grafico-visitas", chartOptions);
+};
+
 const login = () => {
 	btnLogin = document.getElementById("btn-login");
 	btnLogin.addEventListener("click", e => {
@@ -68,7 +78,7 @@ const login = () => {
 			data: data,
 			statusCode: {
 				200: res => {
-					location.href = "/formulario";
+					location.href = "/dashboard";
 				},
 				401: res => {
 					const json = JSON.parse(res.responseText);
@@ -181,4 +191,68 @@ const mostrarError = (estado, elemento, mensaje) => {
 		elemento.innerHTML = "";
 		elemento.style.display = "none";
 	}
+};
+
+const chartOptions = {
+	chart: {
+		type: "column"
+	},
+	title: {
+		text: "Visitas a la pagina durante la semana"
+	},
+	xAxis: {
+		categories: [
+			"Lunes",
+			"Martes",
+			"Miercoles",
+			"Jueves",
+			"Viernes",
+			"Sabado",
+			"Domingo"
+		]
+	},
+	yAxis: {
+		min: 0,
+		title: {
+			text: "Cantidad de visitas"
+		},
+		stackLabels: {
+			enabled: true,
+			style: {
+				fontWeight: "bold",
+				color:
+					// theme
+					(Highcharts.defaultOptions.title.style &&
+						Highcharts.defaultOptions.title.style.color) ||
+					"gray"
+			}
+		}
+	},
+	legend: {
+		align: "right",
+		x: -30,
+		verticalAlign: "top",
+		y: 25,
+		floating: true,
+		backgroundColor:
+			Highcharts.defaultOptions.legend.backgroundColor || "white",
+		borderColor: "#CCC",
+		borderWidth: 1,
+		shadow: false
+	},
+	tooltip: {
+		headerFormat: "<b>{point.x}</b><br/>",
+		pointFormat: "Visitas: {point.stackTotal}"
+	},
+	plotOptions: {
+		column: {
+			stacking: "normal"
+		}
+	},
+	series: [
+		{
+			name: "Dia",
+			data: [5, 3, 4, 7, 2, 3, 5]
+		}
+	]
 };
