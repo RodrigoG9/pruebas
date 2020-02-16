@@ -28,7 +28,7 @@ class Formulario extends CI_Controller
 		$area = $this->input->post('areai');
 		//get_image = $this->input->post(file_get_contents($_FILES['foto1i']['tmp_name']));
 		//$foto1=$this->input->post(file_get_contents($_FILES['foto1i']['tmp_name']));
-		//$this->formularioo_model->insertar_sala($titulo,$area);
+		
 		//var_dump($get_image);
 		
 		$config['upload_path'] = './sala/';
@@ -56,8 +56,9 @@ class Formulario extends CI_Controller
 			$bytes2=file_get_contents($file_data2['full_path']);
 			//var_dump($file_data2['file_name']);
 		}
+		$this->formularioo_model->insertar_sala($titulo,$area,$bytes1,$bytes2);
 
-
+		
 		
 		
 
