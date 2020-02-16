@@ -29,17 +29,16 @@ $(document).ready(function() {
 		// Obtenemos la ruta temporal mediante el evento
 		var TmpPath = URL.createObjectURL(e.target.files[0]);
 		// Mostramos la ruta temporal
-	//	$("#span2").html(TmpPath);
+		//	$("#span2").html(TmpPath);
 		$("#send_img2").attr("src", TmpPath);
 	});
 	$(document).on("change", "input[id=img1]", function(e) {
 		// Obtenemos la ruta temporal mediante el evento
 		var TmpPath = URL.createObjectURL(e.target.files[0]);
 		// Mostramos la ruta temporal
-	//	$("#span2").html(TmpPath);
+		//	$("#span2").html(TmpPath);
 		$("#send_img").attr("src", TmpPath);
 	});
-
 
 	$("#btn_insertar").click(function(e) {
 		e.preventDefault();
@@ -52,9 +51,8 @@ $(document).ready(function() {
 		let formData = new FormData();
 		formData.append("tituloi", tituloi);
 		formData.append("areai", textoi);
-		formData.append("foto1i",img1i[0]);
-		formData.append("foto2i",img2i[0]);
-		
+		formData.append("foto1i", img1i[0]);
+		formData.append("foto2i", img2i[0]);
 
 		$.ajax({
 			url: "/formulario/insertar",
@@ -72,7 +70,15 @@ $(document).ready(function() {
 });
 
 const graficarVisitas = () => {
-	Highcharts.chart("grafico-visitas", chartOptions);
+	$.ajax({
+		type: "GET",
+		url: "/dashboard/visitas",
+		data: "data",
+		success: function(response) {
+			console.log(response);
+			Highcharts.chart("grafico-visitas", chartOptions(response));
+		}
+	});
 };
 
 const login = () => {
@@ -205,66 +211,68 @@ const mostrarError = (estado, elemento, mensaje) => {
 	}
 };
 
-const chartOptions = {
-	chart: {
-		type: "column"
-	},
-	title: {
-		text: "Visitas a la pagina durante la semana"
-	},
-	xAxis: {
-		categories: [
-			"Lunes",
-			"Martes",
-			"Miercoles",
-			"Jueves",
-			"Viernes",
-			"Sabado",
-			"Domingo"
-		]
-	},
-	yAxis: {
-		min: 0,
-		title: {
-			text: "Cantidad de visitas"
+const chartOptions = data => {
+	return {
+		chart: {
+			type: "column"
 		},
-		stackLabels: {
-			enabled: true,
-			style: {
-				fontWeight: "bold",
-				color:
-					// theme
-					(Highcharts.defaultOptions.title.style &&
-						Highcharts.defaultOptions.title.style.color) ||
-					"gray"
+		title: {
+			text: "Visitas a la pagina durante la semana"
+		},
+		xAxis: {
+			categories: [
+				"Domingo",
+				"Lunes",
+				"Martes",
+				"Miercoles",
+				"Jueves",
+				"Viernes",
+				"Sabado"
+			]
+		},
+		yAxis: {
+			min: 0,
+			title: {
+				text: "Cantidad de visitas"
+			},
+			stackLabels: {
+				enabled: true,
+				style: {
+					fontWeight: "bold",
+					color:
+						// theme
+						(Highcharts.defaultOptions.title.style &&
+							Highcharts.defaultOptions.title.style.color) ||
+						"gray"
+				}
 			}
-		}
-	},
-	legend: {
-		align: "right",
-		x: -30,
-		verticalAlign: "top",
-		y: 25,
-		floating: true,
-		backgroundColor:
-			Highcharts.defaultOptions.legend.backgroundColor || "white",
-		borderColor: "#CCC",
-		borderWidth: 1,
-		shadow: false
-	},
-	tooltip: {
-		headerFormat: "<b>{point.x}</b><br/>",
-		pointFormat: "Visitas: {point.stackTotal}"
-	},
-	plotOptions: {
-		column: {
-			stacking: "normal"
-		}
-	},
-	series: [
-		{
-			name: "Dia",
-			data: [5, 3, 4, 7, 2, 3, 5]
-		}
-	]
+		},
+		legend: {
+			align: "right",
+			x: -30,
+			verticalAlign: "top",
+			y: 25,
+			floating: true,
+			backgroundColor:
+				Highcharts.defaultOptions.legend.backgroundColor || "white",
+			borderColor: "#CCC",
+			borderWidth: 1,
+			shadow: false
+		},
+		tooltip: {
+			headerFormat: "<b>{point.x}</b><br/>",
+			pointFormat: "Visitas: {point.stackTotal}"
+		},
+		plotOptions: {
+			column: {
+				stacking: "normal"
+			}
+		},
+		series: [
+			{
+				name: "Dia",
+				data: data
+			}
+		]
+	};
 };
