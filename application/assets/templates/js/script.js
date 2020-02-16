@@ -1,10 +1,15 @@
 let btnReserva = document.getElementById("btn-reserva");
+let loginModal = document.getElementById("loginModal");
 $(document).ready(function() {
 	if (btnReserva !== null) {
 		btnReserva.addEventListener("click", e => {
 			e.preventDefault();
 			hacerReserva();
 		});
+	}
+
+	if (loginModal !== null) {
+		login();
 	}
 
 	$(function() {
@@ -47,6 +52,32 @@ $(document).ready(function() {
 		});
 	});
 });
+
+const login = () => {
+	btnLogin = document.getElementById("btn-login");
+	btnLogin.addEventListener("click", e => {
+		e.preventDefault();
+		let data = {
+			nick: document.getElementById("username").value,
+			password: document.getElementById("password").value
+		};
+
+		$.ajax({
+			type: "POST",
+			url: "/login",
+			data: data,
+			statusCode: {
+				200: res => {
+					location.href = "/formulario";
+				},
+				401: res => {
+					const json = JSON.parse(res.responseText);
+					alert(json.mensaje);
+				}
+			}
+		});
+	});
+};
 
 const hacerReserva = () => {
 	let nombres = document.getElementById("fullNames");

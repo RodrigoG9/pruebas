@@ -76,6 +76,7 @@
 									name="username"
 									placeholder="Nombre de usuario"
 									required="required"
+									id="username"
 								/>
 							</div>
 							<div class="form-group">
@@ -85,10 +86,12 @@
 									name="password"
 									placeholder="Password"
 									required="required"
+									id="password"
 								/>
 							</div>
 							<div class="form-group">
 								<button
+									id="btn-login"
 									type="submit"
 									class="btn btn-primary btn-lg btn-block login-btn"
 								>
