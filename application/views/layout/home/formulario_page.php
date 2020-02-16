@@ -47,54 +47,59 @@
 			</div>
 		</nav>
 	
-<br>
-<center>
-<h1> CREACION DE SALAS <h1>
-</center>
-<br>
-<form >
-<div class="form-group has-success">
-  <label class="form-control-label" for="inputSuccess1">NOMBRE DE LA SALA</label>
-  <input type="text"  class="form-control" id="titulo" name="titulo" placeholder="INGRESE EL NOMBRE DE LA SALA ....">
-  
+<div class="container p-2 shadow p-3 mb-5 bg-white rounded">
+<h1 class="text-center"> CREACION DE SALAS <h1>
+<div class="row">
+	<div class="col">
+	<form class="h5">
+		<div class="form-group">
+			<label class="form-control-label" for="titulo">NOMBRE DE LA SALA</label>
+			<input type="text"  class="form-control" id="titulo" name="titulo" placeholder="INGRESE EL NOMBRE DE LA SALA ....">
+		</div>
+		
+		<div class="form-group">
+			<label for="area">DESCRIPCION</label>
+			<textarea class="form-control" id="area" name="area" rows="3" placeholder="INGRESE DESCRIPCION DE LA SALA ...."></textarea>
+		  </div>
+	  
+		  <div class="form-group">
+			<label for="exampleInputFile">IMAGEN 1</label>
+			<small id="fileHelp" class="form-text text-muted">Ingrese la primera imagen</small>
+			<input type="file" id="img1" class="form-control-file" name="img1" aria-describedby="fileHelp">
+			<span id="span1"></span>
+			<img width="200" alt="Imagen" id="send_img" name="send_img" />
+		   
+		  </div>
+		  
+		  <div class="form-group">
+			<label for="exampleInputFile">IMAGEN 2</label>
+			<small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
+			<input type="file" class="form-control-file" id="img2" name="img2" aria-describedby="fileHelp">
+			<span id="span2"></span>
+			<img width="200" alt="Imagen" id="send_img2" name="send_img2"/> 
+			
+		  </div>
+	  
+		  
+		
+		  <button type="submit" id="insertar"  name="insertar" class="btn btn-success">INSERTAR</button>
+		
+	  
+		
+		<button type="reset" class="btn btn-danger">LIMPIAR</button>
+		
+	  </form>
+	</div>
+</div>
 </div>
 
-<div class="form-group">
-      <label for="exampleTextarea">DESCRIPCION</label>
-      <textarea class="form-control" id="area" name="area" rows="3" placeholder="INGRESE DESCRIPCION DE LA SALA ...."></textarea>
-    </div>
-
-	<div class="form-group">
-      <label for="exampleInputFile">IMAGEN 1</label>
-	  <small id="fileHelp" class="form-text text-muted">Ingrese la primera imagen</small>
-	  <input type="file" id="img1" class="form-control-file" name="img1" aria-describedby="fileHelp">
-	  <span id="span1"></span><br /><br />
-	  <img width="200" alt="Imagen" id="send_img" name="send_img" />
-     
-	</div>
 	
-	<div class="form-group">
-      <label for="exampleInputFile">IMAGEN 2</label>
-	  <small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
-	  <input type="file" class="form-control-file" id="img2" name="img2" aria-describedby="fileHelp">
-	  <span id="span2"></span><br /><br />
-	  <img width="200" alt="Imagen" id="send_img2" name="send_img2" /> 
-	  
-	</div>
+<div id="ajx"></div>
 
-	
-    </fieldset>
-    <button type="submit" id="insertar"  name="insertar" class="btn btn-success">INSERTAR</button>
-  </fieldset>
 
-  </fieldset>
-  <button type="reset" class="btn btn-danger">LIMPIAR</button>
-  </fieldset>
-</form>
-<div id="ajx">
-		
-	</div>
-<?=$scripts?>
+
+
+<?= $scripts ?>
 
 </body>
 </html>
