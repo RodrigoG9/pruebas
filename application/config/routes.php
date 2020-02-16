@@ -57,4 +57,4 @@ $route['salas/(:num)'] = 'salas/mostrarSala/$1';
 $route['salas/reservar']['POST'] = 'salas/reservar';
 
 $route['login']['POST'] = 'user/login';
-$route['logout']['POST'] = 'user/logout';
+$route['logout'] = 'user/logout';

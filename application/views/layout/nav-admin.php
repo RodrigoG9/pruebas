@@ -29,7 +29,7 @@
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="#" data-toggle="modal"
+						<a class="nav-link" href="/logout"
 							><i class="fas fa-user"></i> Log-OUT</a
 						>
 					</li>

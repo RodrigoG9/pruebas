@@ -56,5 +56,6 @@ class User extends CI_Controller
 	{
 		$this->session->unset_userdata('nick', 'isLogged');
 		$this->session->sess_destroy();
+		echo '<script type="text/javascript">location.href = "/";</script>';
 	}
 }
