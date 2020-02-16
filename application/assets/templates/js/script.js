@@ -1,9 +1,11 @@
 let btnReserva = document.getElementById("btn-reserva");
 $(document).ready(function() {
-	btnReserva.addEventListener("click", e => {
-		e.preventDefault();
-		hacerReserva();
-	});
+	if (btnReserva !== null) {
+		btnReserva.addEventListener("click", e => {
+			e.preventDefault();
+			hacerReserva();
+		});
+	}
 
 	$(function() {
 		$("#datetimepicker1").datetimepicker({
@@ -30,7 +32,6 @@ $(document).ready(function() {
 		let formData = new FormData();
 		formData.append("titulo", tituloi);
 		formData.append("area", textoi);
-		
 
 		$.ajax({
 			url: "/formulario/insertar",

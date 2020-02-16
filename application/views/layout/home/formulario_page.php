@@ -66,7 +66,7 @@
 			<label for="exampleInputFile">IMAGEN 1</label>
 			<small id="fileHelp" class="form-text text-muted">Ingrese la primera imagen</small>
 			<input type="file" id="img1" class="form-control-file" name="img1" aria-describedby="fileHelp">
-			<span id="span1"></span>
+			<span id="span1" d-block text-muted></span>
 			<img width="200" alt="Imagen" id="send_img" name="send_img" />
 		   
 		  </div>
@@ -75,7 +75,7 @@
 			<label for="exampleInputFile">IMAGEN 2</label>
 			<small id="fileHelp" class="form-text text-muted">Ingrese la segunda imagen</small>
 			<input type="file" class="form-control-file" id="img2" name="img2" aria-describedby="fileHelp">
-			<span id="span2"></span>
+			<span id="span2" class="d-block text-muted"></span>
 			<img width="200" alt="Imagen" id="send_img2" name="send_img2"/> 
 			
 		  </div>
