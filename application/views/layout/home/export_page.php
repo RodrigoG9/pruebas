@@ -24,7 +24,9 @@
                                 </div>
                             </div>
   							<div class="invalid-feedback" id="fechaMsg"></div>
-						</div>
+                        </div>
+                        <button type="submit" class="btn btn-success">EXPORTAR</button>
+                        <button type="reset" class="btn btn-danger">LIMPIAR</button>
     </form>
     </div>
 </div>
