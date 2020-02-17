@@ -17,8 +17,11 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor02">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
+					<li class="nav-item ">
 						<a class="nav-link" href="/formulario">Agregar Salas</a>
+					</li>
+					<li class="nav-item ">
+						<a class="nav-link" href="/eliminar">Lista Salas</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/export">EXPORTAR</a>
