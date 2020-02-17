@@ -16,14 +16,14 @@
 	<div class="col">
 	<form class="h5">
     <div class="form-group has-danger">
-  							<label class="form-control-label" for="fechaReserva">Seleccione la fecha:</label>
-  							<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input " data-target="#datetimepicker1"id="fechaReserva"/>
-                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>                      
-                                </div>
-                            </div>
-  							<div class="invalid-feedback" id="fechaMsg"></div>
+  	    <label class="form-control-label" for="fechaReserva">Seleccione la fecha:</label>
+  	    <div class="input-group date" id="datetimepicker2" data-target-input="nearest">
+            <input type="text" class="form-control datetimepicker-input "   data-target="#datetimepicker2"id="fechaReserva"/>
+            <div class="input-group-append" data-target="#datetimepicker2" data-toggle="datetimepicker">
+                <div class="input-group-text"><i class="fa fa-calendar"></i></div>                      
+            </div>
+        </div>
+  	<div class="invalid-feedback" id="fechaMsg"></div>
                         </div>
                         <button id="btn-export" type="submit" class="btn btn-success">EXPORTAR</button>
                         <button type="reset" class="btn btn-danger">LIMPIAR</button>

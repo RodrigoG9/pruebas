@@ -23,10 +23,12 @@ $(document).ready(function() {
 		agregarFuncion();
 	}
 
-	$(function() {
-		$("#datetimepicker1").datetimepicker({
-			format: "MM/DD/YYYY HH:00"
-		});
+	$("#datetimepicker1").datetimepicker({
+		format: "MM/DD/YYYY HH:00"
+	});
+
+	$("#datetimepicker2").datetimepicker({
+		format: "MM/DD/YYYY HH:00"
 	});
 
 	//Manda la imagen seleccionada 2 a send img 2
@@ -96,28 +98,30 @@ const graficarVisitas = () => {
 
 const login = () => {
 	btnLogin = document.getElementById("btn-login");
-	btnLogin.addEventListener("click", e => {
-		e.preventDefault();
-		let data = {
-			nick: document.getElementById("username").value,
-			password: document.getElementById("password").value
-		};
+	if (btnLogin) {
+		btnLogin.addEventListener("click", e => {
+			e.preventDefault();
+			let data = {
+				nick: document.getElementById("username").value,
+				password: document.getElementById("password").value
+			};
 
-		$.ajax({
-			type: "POST",
-			url: "/login",
-			data: data,
-			statusCode: {
-				200: res => {
-					location.href = "/dashboard";
-				},
-				401: res => {
-					const json = JSON.parse(res.responseText);
-					alert(json.mensaje);
+			$.ajax({
+				type: "POST",
+				url: "/login",
+				data: data,
+				statusCode: {
+					200: res => {
+						location.href = "/dashboard";
+					},
+					401: res => {
+						const json = JSON.parse(res.responseText);
+						alert(json.mensaje);
+					}
 				}
-			}
+			});
 		});
-	});
+	}
 };
 
 const hacerReserva = () => {
