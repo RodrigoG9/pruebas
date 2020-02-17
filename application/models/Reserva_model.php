@@ -41,4 +41,29 @@ class Reserva_model extends CI_Model
 			return $rep;
 		}
 	}
+
+	public function listaReservas($fecha)
+	{
+		$data = $this->db->get('Registro');
+		//$f = preg_split("/[\/]+/", $fecha);
+		//$fDia = $f[0];
+		//$fMes = $f[1];
+		//$fAnio = $f[2];
+		$datosEnviar = array();
+		foreach ($data->result() as $reserva) {
+			$fr = preg_split("/[\s]+/", $reserva->Fecha);
+			$fechaReserva = $fr[0];
+			//$fdb = preg_split("/[\/]+/", $fechaReserva);
+			//
+			//$frDia = $fdb[0];
+			//$frMes = $fdb[1];
+			//$frAnio = $fdb[2];
+
+			if ($fecha == $fechaReserva) {
+				array_push($datosEnviar, $reserva);
+			}
+		}
+		//print_r($datosEnviar);
+		return $datosEnviar;
+	}
 }

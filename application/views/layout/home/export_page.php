@@ -14,7 +14,7 @@
 <h1 class="text-center"> EXPORTAR <h1>
 <div class="row">
 	<div class="col">
-	<form class="h5" >
+	<form class="h5">
     <div class="form-group has-danger">
   							<label class="form-control-label" for="fechaReserva">Seleccione la fecha:</label>
   							<div class="input-group date" id="datetimepicker1" data-target-input="nearest">
@@ -25,7 +25,7 @@
                             </div>
   							<div class="invalid-feedback" id="fechaMsg"></div>
                         </div>
-                        <button type="submit" class="btn btn-success">EXPORTAR</button>
+                        <button id="btn-export" type="submit" class="btn btn-success">EXPORTAR</button>
                         <button type="reset" class="btn btn-danger">LIMPIAR</button>
     </form>
     </div>

@@ -1,6 +1,7 @@
 let btnReserva = document.getElementById("btn-reserva");
 let loginModal = document.getElementById("loginModal");
 let chart = document.getElementById("grafico-visitas");
+let btnExport = document.getElementById("btn-export");
 
 $(document).ready(function() {
 	if (btnReserva !== null) {
@@ -16,6 +17,10 @@ $(document).ready(function() {
 
 	if (chart) {
 		graficarVisitas();
+	}
+
+	if (btnExport) {
+		agregarFuncion();
 	}
 
 	$(function() {
@@ -68,6 +73,14 @@ $(document).ready(function() {
 		});
 	});
 });
+
+const agregarFuncion = () => {
+	btnExport.addEventListener("click", e => {
+		e.preventDefault();
+		let fecha = document.getElementById("fechaReserva").value;
+		location.href = "/export/pdf?fecha=" + fecha.split(" ")[0];
+	});
+};
 
 const graficarVisitas = () => {
 	$.ajax({
