@@ -22,9 +22,6 @@
 					<li class="nav-item">
 						<a class="nav-link" href="/salas">Salas</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Reservas</a>
-					</li>
 				</ul>
 
 				

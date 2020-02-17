@@ -49,7 +49,7 @@
 		
 	  
 		
-		<button type="reset" class="btn btn-danger">LIMPIAR</button>
+		<button type="reset" class="btn btn-danger" id="btn_limpiar" name="btn_limpiar">LIMPIAR</button>
 		
 	  </form>
 	</div>

@@ -69,11 +69,19 @@ $(document).ready(function() {
 			processData: false,
 			success: function(resultados) {
 				console.log("Petición terminada. Resultados", resultados);
-				let d = document.getElementById("ajx");
-				d.innerHTML = resultados;
+				alert("Ingreso de Sala exitoso Limpie la ventana para poder ingresar otros datos");
+				//let d = document.getElementById("ajx");
+				//d.innerHTML = resultados;
 			}
 		});
 	});
+
+
+	$("#btn_limpiar").click(function (e) {
+		$("#send_img")[0].setAttribute("src", "");
+		$("#send_img2")[0].setAttribute("src", "");
+	});
+
 });
 
 const agregarFuncion = () => {
