@@ -21,7 +21,7 @@
 						<a class="nav-link" href="/formulario">Agregar Salas</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/exportar">EXPORTAR</a>
+						<a class="nav-link" href="/export">EXPORTAR</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/dashboard">Dashboard</a>
