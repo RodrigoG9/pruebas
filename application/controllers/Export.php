@@ -1,15 +1,14 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
+use Dompdf\Dompdf;
 class Export extends CI_Controller
 {
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
-    
-    public function index()
+	public function index()
 	{
 		$vars = array(
 			'scripts' => $this->load->view('layout/scripts', '', true),
@@ -19,6 +18,10 @@ class Export extends CI_Controller
 		$this->load->view('layout/home/export_page', $vars);
 	}
 
+	public function pdf()
+	{
+		$dompdf = new Dompdf();
 
-
+		$this->load->view('exports/pdf_template');
+	}
 }
