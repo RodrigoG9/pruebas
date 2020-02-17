@@ -21,4 +21,10 @@ class Sala_model extends CI_Model
 		$data = $this->db->get_where('Salas', array('id_sa' => $id), 1);
 		return $data->result();
 	}
+
+	public function delete_sala($id){
+		$this->db->where('id_sa', $id);
+		$this->db->delete('Salas');
+	}
+
 }

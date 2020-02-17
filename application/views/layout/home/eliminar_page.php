@@ -14,12 +14,13 @@
 <h1 class="text-center"> Salas <h1>
 <div class="row">
 	<div class="col">
+        <form>
     <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">NOMBRE SALA</th>
       <th scope="col">IMAGEN</th>
-      <th scope="col">ELIMINAR?</th>
+      <th scope="col"></th>
     </tr>
     <?php
     foreach ($data as $sala) {
@@ -30,13 +31,17 @@
         echo "<th scope=col>";
         echo '<img src="data:image/jpeg;base64,' . base64_encode($sala->foto_1) . '" class="card-img-topalt="..." height="70px width="70px">';
         echo "</th>";
-        echo '<th scope=col><button type="button" class="btn btn-warning">ELIMINAR</button></th>"';
+        echo '<th scope=col>'.
+        '<a href="eliminar/eliminar?id='.$sala->id_sa.'&sala='.$sala->titulo.'">'.
+        '<button type="button" class="btn btn-warning" id="btn_eliminar">ELIMINAR</button>'.
+        '</th>"';
         echo "<tr>";
     }
     ?>
   </thead>
   
 </table> 
+        </form>
     </div>
 </div>
 

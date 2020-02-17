@@ -23,6 +23,22 @@ class Eliminar extends CI_Controller
         
 	}
 
+    
+
+    public function eliminar(){
+       $id=$_GET['id'];
+       print_r($id);
+       $this->sala_model->delete_sala($id);
+       $salas = $this->sala_model->getSalas();
+       $vars = array(
+        'scripts' => $this->load->view('layout/scripts', '', true),
+        'styles' => $this->load->view('layout/styles', '', true),
+        'nav' => $this->load->view('layout/nav-admin', '', true),
+        'data' => $salas
+    );
+    $this->load->view('layout/home/eliminar_page', $vars);
+
+    }
 
 
 }
