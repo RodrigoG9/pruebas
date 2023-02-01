@@ -13,7 +13,7 @@
 	"require": {
 		"php": "7.4.2",
 		"twbs/bootstrap": "^4.4",
-		"dompdf/dompdf": "^0.8.4"
+		"dompdf/dompdf": "^2.0.2"
 	},
 	"suggest": {
 		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
